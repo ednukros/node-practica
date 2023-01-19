@@ -92,8 +92,9 @@ const deleteTeacher = async (req, res, next) => {
 module.exports = {
     indexGet,
     getById,
+    getByName,
     createPost,
     editPut,
     deleteTeacher,
-    getByName
+   
 }

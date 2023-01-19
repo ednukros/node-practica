@@ -9,6 +9,7 @@ db.connectDB(); //FUNCION QUE ME CONECTA CON LA BD EN NUESTRO SERVIDOR
 //IMPORTAMOS TODAS LAS RUTAS PARA PODER UTILIZARLAS EN NUESTRO SERVIDOR.
 const indexRoutes = require("./src/api/index/index.routes");
 const teachersRouters = require("./src/api/teachers/teacher.routes");
+// const studentsRouters = require("./src/api/students/students.routers");
 
 const PORT = 8080;  //DECLARAMOS EL PUERTO DONDE LEVANTAR NUESTRO SERVIDOR
 
