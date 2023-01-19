@@ -1,5 +1,6 @@
 const express = require("express");  //LEVANTAMOS SERVIDOR
 
+
 const cors = require("cors");  //SIRVE PARA PERMITIR O DENEGAR QUE SE PUEDA ACCEDER AL SERVIDOR EN X SITIOS
 
 const db = require("./src/utils/database.js") //IMPORTAMOS DB
@@ -9,7 +10,7 @@ db.connectDB(); //FUNCION QUE ME CONECTA CON LA BD EN NUESTRO SERVIDOR
 //IMPORTAMOS TODAS LAS RUTAS PARA PODER UTILIZARLAS EN NUESTRO SERVIDOR.
 const indexRoutes = require("./src/api/index/index.routes");
 const teachersRouters = require("./src/api/teachers/teacher.routes");
-// const studentsRouters = require("./src/api/students/students.routers");
+const studentsRouters = require("./src/api/users/user.routes");
 
 const PORT = 8080;  //DECLARAMOS EL PUERTO DONDE LEVANTAR NUESTRO SERVIDOR
 
@@ -28,7 +29,7 @@ server.use(express.urlencoded({ extended: true}));
 
 //CONFIGURAMOS TODAS LAS RUTAS DE NUESTRO SERVER
 server.use("/teachers", teachersRouters);
-
+server.use("/students", studentsRouters);
 server.use("/", indexRoutes);
 
 //POR AQUÍ PASARÁN TODAS LAS RUTAS QUE NO EXISTAN
